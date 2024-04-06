@@ -10,7 +10,7 @@
 	<script>
 		function secondHighest(arr) {
 			  if (arr.length <= 1) {
-        return undefined;
+         return -Infinity;;
     }
 
     let firstMax = -Infinity;
@@ -30,7 +30,7 @@
     }
 
     if (allSame || secondMax === -Infinity) {
-        return undefined;
+          return -Infinity;;
     }
 
     return secondMax;

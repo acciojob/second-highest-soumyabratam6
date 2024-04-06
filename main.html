@@ -15,8 +15,12 @@
 
     let firstMax = -Infinity;
     let secondMax = -Infinity;
+    let allSame = true;
 
     for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[0]) {
+            allSame = false;
+        }
         if (arr[i] > firstMax) {
             secondMax = firstMax;
             firstMax = arr[i];
@@ -25,8 +29,8 @@
         }
     }
 
-    if (secondMax === -Infinity) {
-        return firstMax;
+    if (allSame || secondMax === -Infinity) {
+        return undefined;
     }
 
     return secondMax;
@@ -36,7 +40,7 @@
 			var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
-				arr[i] = parseInt(prompt("Enter element " + (i+1)));
+				arr[i] = prompt("Enter element " + (i+1));
 			}
 			alert(secondHighest(arr));
 		}
